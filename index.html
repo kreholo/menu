@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MaviaySakura Menü</title>
+    <title>MaviaySakura Dijital Menü</title>
     <style>
-        /* GENEL AYARLAR */
+        /* --- TASARIM AYARLARI --- */
         :root {
             --bg-color: #0b1026;
             --card-bg: #162044;
@@ -23,12 +23,13 @@
             margin: 0;
             padding: 0;
             line-height: 1.4;
+            padding-bottom: 50px;
         }
 
-        /* KAPAK / HEADER */
+        /* HEADER */
         header {
             text-align: center;
-            padding: 50px 20px 30px;
+            padding: 40px 20px 20px;
         }
 
         .moon {
@@ -56,13 +57,13 @@
             font-style: italic;
         }
 
-        /* NAVİGASYON - GÜNCELLENDİ: ORTALANDI */
+        /* NAVİGASYON (ORTALANMIŞ BUTONLAR) */
         nav {
             display: flex;
-            justify-content: center; /* BUTONLARI ORTALA */
-            flex-wrap: wrap; /* Sığmazsa alt satıra geçsin */
-            padding: 15px 10px;
-            background: rgba(11, 16, 38, 0.8);
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 15px 5px;
+            background: rgba(11, 16, 38, 0.9);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -73,82 +74,71 @@
         nav a {
             color: var(--sakura-pink);
             text-decoration: none;
-            padding: 8px 16px;
-            margin: 0 5px;
+            padding: 8px 14px;
+            margin: 4px;
             border-radius: 20px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            background-color: rgba(255, 255, 255, 0.05);
             border: 1px solid transparent;
             transition: all 0.3s ease;
         }
 
         nav a:hover {
-            background-color: rgba(255, 183, 197, 0.1);
+            background-color: rgba(255, 183, 197, 0.2);
             border-color: var(--sakura-pink);
         }
 
-        /* MENÜ İÇERİĞİ */
+        /* İÇERİK ALANI */
         .container {
             max-width: 600px;
             margin: 0 auto;
-            padding: 10px 20px 40px;
+            padding: 10px 20px;
         }
 
         .category-title {
             color: var(--moon-glow);
-            text-align: center; /* Başlıkları da ortaladım */
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-size: 1.4rem;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
             font-family: 'Garamond', serif;
-            position: relative;
-        }
-        
-        .category-title::after {
-            content: '🌸';
-            font-size: 0.8em;
-            margin-left: 10px;
+            border-bottom: 2px solid rgba(255, 183, 197, 0.3);
+            display: inline-block;
+            padding-bottom: 5px;
+            width: 100%;
         }
 
-        /* KART TASARIMI - GÜNCELLENDİ: GÖRSEL EKLENDİ */
+        /* ÜRÜN KARTI */
         .menu-item {
             background-color: var(--card-bg);
             border-radius: 16px;
             padding: 12px;
             margin-bottom: 15px;
             display: flex;
-            align-items: center; /* Dikeyde ortala */
+            align-items: center;
             border: 1px solid rgba(255, 183, 197, 0.1);
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
-        /* YEMEK GÖRSELİ STİLİ */
         .food-img {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 12px;
-            object-fit: cover; /* Resmi kutuya sığdırır, bozmaz */
+            object-fit: cover;
             margin-right: 15px;
-            background-color: #2d3e75; /* Resim yüklenmezse görünecek renk */
-            border: 1px solid rgba(255, 183, 197, 0.2);
+            background-color: #2d3e75;
         }
 
         .item-details {
-            flex: 1; /* Kalan boşluğu doldur */
+            flex: 1;
         }
 
         .item-details h3 {
             margin: 0;
             color: #fff;
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 600;
-        }
-
-        .item-details p {
-            margin: 4px 0 0;
-            font-size: 0.8rem;
-            color: #94a3b8;
-            line-height: 1.3;
         }
 
         .price {
@@ -173,100 +163,237 @@
 
         @keyframes fall {
             0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
-            20% { opacity: 0.8; }
             100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             color: #64748b;
             font-size: 0.8rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
     <div class="petal" style="left: 10%; animation-duration: 8s;"></div>
-    <div class="petal" style="left: 30%; animation-duration: 12s; animation-delay: 2s;"></div>
-    <div class="petal" style="left: 80%; animation-duration: 9s; animation-delay: 1s;"></div>
+    <div class="petal" style="left: 50%; animation-duration: 12s; animation-delay: 2s;"></div>
+    <div class="petal" style="left: 90%; animation-duration: 9s; animation-delay: 1s;"></div>
 
     <header>
         <div class="moon"></div>
         <h1>MaviaySakura</h1>
-        <div class="tagline">Gecenin Ruhu, Kiraz Çiçeğinin Zarafeti</div>
+        <div class="tagline">Lezzetin Uzak Doğu Hali</div>
     </header>
 
     <nav>
-        <a href="#baslangic">Başlangıç</a>
+        <a href="#noodle">Noodle</a>
         <a href="#sushi">Sushi</a>
-        <a href="#ana-yemek">Ana Yemek</a>
-        <a href="#icecek">İçecek</a>
+        <a href="#atistirmalik">Atıştırmalık</a>
+        <a href="#tatli">Tatlılar</a>
+        <a href="#icecek">İçecekler</a>
     </nav>
 
     <div class="container">
+
+        <h2 id="noodle" class="category-title">Noodle & Ramen 🍜</h2>
+
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Ramen" alt="Ramen" class="food-img">
+            <div class="item-details"><h3>Ramen</h3></div>
+            <div class="price">240₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Sebzeli" alt="Sebzeli Noodle" class="food-img">
+            <div class="item-details"><h3>Sebzeli Noodle</h3></div>
+            <div class="price">240₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Tavuklu" alt="Tavuklu Noodle" class="food-img">
+            <div class="item-details"><h3>Tavuklu Noodle</h3></div>
+            <div class="price">420₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Deniz" alt="Deniz Mahsulü Noodle" class="food-img">
+            <div class="item-details"><h3>Deniz Mahsulü Noodle</h3></div>
+            <div class="price">450₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Karides" alt="Karidesli Noodle" class="food-img">
+            <div class="item-details"><h3>Karidesli Noodle</h3></div>
+            <div class="price">330₺</div>
+        </div>
+
+
+        <h2 id="sushi" class="category-title">Sushiler 🍣</h2>
         
-        <h2 id="baslangic" class="category-title">Başlangıçlar</h2>
-        
         <div class="menu-item">
-            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Edamame" alt="Edamame" class="food-img">
-            <div class="item-details">
-                <h3>Edamame</h3>
-                <p>Buharda pişmiş soya fasulyesi, maldon tuz.</p>
-            </div>
-            <div class="price">120₺</div>
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Istakoz" alt="Istakoz Maki" class="food-img">
+            <div class="item-details"><h3>Istakoz Maki-Roll</h3></div>
+            <div class="price">400₺</div>
         </div>
-
         <div class="menu-item">
-            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Gyoza" alt="Gyoza" class="food-img">
-            <div class="item-details">
-                <h3>Sakura Gyoza</h3>
-                <p>Tavuklu Japon mantısı, pembe sos ile.</p>
-            </div>
-            <div class="price">180₺</div>
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Yengec" alt="Yengeç Maki" class="food-img">
+            <div class="item-details"><h3>Yengeç Maki-Roll</h3></div>
+            <div class="price">270₺</div>
         </div>
-
-        <h2 id="sushi" class="category-title">Sushi & Roll</h2>
-
-        <div class="menu-item" style="border: 1px solid var(--sakura-pink);">
-            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Maviay" alt="Maviay Roll" class="food-img">
-            <div class="item-details">
-                <h3 style="color:var(--sakura-pink)">Maviay Special 🌑</h3>
-                <p>Yılan balığı, mavi havyar, trüf mayonez.</p>
-            </div>
-            <div class="price">380₺</div>
-        </div>
-
         <div class="menu-item">
-            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Sakura" alt="Sakura Roll" class="food-img">
-            <div class="item-details">
-                <h3>Sakura Roll 🌸</h3>
-                <p>Somon, krem peynir, pembe soya kağıdı.</p>
-            </div>
-            <div class="price">320₺</div>
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Somon" alt="Somon Maki" class="food-img">
+            <div class="item-details"><h3>Somon Maki-Roll</h3></div>
+            <div class="price">345₺</div>
         </div>
-
-        <h2 id="ana-yemek" class="category-title">Ana Yemekler</h2>
-
         <div class="menu-item">
-            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Tavuk" alt="General Tso" class="food-img">
-            <div class="item-details">
-                <h3>General Tso Tavuk</h3>
-                <p>Tatlı acı soslu çıtır tavuk, pilav ile.</p>
-            </div>
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Karides" alt="Karides Maki" class="food-img">
+            <div class="item-details"><h3>Karides Maki-Roll</h3></div>
             <div class="price">360₺</div>
         </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Ton+Balik" alt="Ton Balıklı Maki" class="food-img">
+            <div class="item-details"><h3>Ton Balıklı Maki-Roll</h3></div>
+            <div class="price">270₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Nigiri" alt="Somon Nigiri" class="food-img">
+            <div class="item-details"><h3>Somon Nigiri</h3></div>
+            <div class="price">345₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Onigiri" alt="Somon Onigiri" class="food-img">
+            <div class="item-details"><h3>Somon Onigiri</h3></div>
+            <div class="price">345₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Y.Nigiri" alt="Yengeç Nigiri" class="food-img">
+            <div class="item-details"><h3>Yengeç Nigiri</h3></div>
+            <div class="price">345₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Y.Onigiri" alt="Yengeç Onigiri" class="food-img">
+            <div class="item-details"><h3>Yengeç Onigiri</h3></div>
+            <div class="price">345₺</div>
+        </div>
 
-        <h2 id="icecek" class="category-title">İçecekler</h2>
+
+        <h2 id="atistirmalik" class="category-title">Atıştırmalıklar 🍤</h2>
 
         <div class="menu-item">
-            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Limonata" alt="Limonata" class="food-img">
-            <div class="item-details">
-                <h3>Mavi Limonata</h3>
-                <p>Renk değiştiren butterfly pea çayı.</p>
-            </div>
-            <div class="price">90₺</div>
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Fish" alt="Fish Finger" class="food-img">
+            <div class="item-details"><h3>Fish Finger</h3></div>
+            <div class="price">200₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Kalamar" alt="Kalamar Tava" class="food-img">
+            <div class="item-details"><h3>Kalamar Tava</h3></div>
+            <div class="price">200₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Midye" alt="Midye Tempura" class="food-img">
+            <div class="item-details"><h3>Midye Tempura</h3></div>
+            <div class="price">200₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Tost" alt="Tost" class="food-img">
+            <div class="item-details"><h3>Tost</h3></div>
+            <div class="price">130₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Tabak" alt="Atıştırma Tabağı" class="food-img">
+            <div class="item-details"><h3>Atıştırma Tabağı</h3></div>
+            <div class="price">240₺</div>
+        </div>
+
+
+        <h2 id="tatli" class="category-title">Tatlılar 🍰</h2>
+
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Cheesecake" alt="Cheesecake" class="food-img">
+            <div class="item-details"><h3>Cheesecake</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Pasta" alt="Çikolatalı Pasta" class="food-img">
+            <div class="item-details"><h3>Çikolatalı Pasta</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=M.Pasta" alt="Meyveli Pasta" class="food-img">
+            <div class="item-details"><h3>Meyveli Pasta</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Mochi" alt="Mochi" class="food-img">
+            <div class="item-details"><h3>Mochi</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Magnolia" alt="Magnolia" class="food-img">
+            <div class="item-details"><h3>Magnolia</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Waffle" alt="Waffle" class="food-img">
+            <div class="item-details"><h3>Waffle</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Donat" alt="Donat" class="food-img">
+            <div class="item-details"><h3>Donat</h3></div>
+            <div class="price">00₺</div>
+        </div>
+
+
+        <h2 id="icecek" class="category-title">İçecekler 🥤</h2>
+
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Soda" alt="Soda" class="food-img">
+            <div class="item-details"><h3>Soda</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Su" alt="Su" class="food-img">
+            <div class="item-details"><h3>Su</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=M.Soda" alt="Meyveli Soda" class="food-img">
+            <div class="item-details"><h3>Meyveli Soda</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Kola" alt="Kola" class="food-img">
+            <div class="item-details"><h3>Kola</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Gazoz" alt="Gazoz" class="food-img">
+            <div class="item-details"><h3>Gazoz</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Latte" alt="Latte" class="food-img">
+            <div class="item-details"><h3>Latte</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Americano" alt="Americano" class="food-img">
+            <div class="item-details"><h3>Americano</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Cay" alt="Çay" class="food-img">
+            <div class="item-details"><h3>Çay</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=T.Kahve" alt="Türk Kahvesi" class="food-img">
+            <div class="item-details"><h3>Türk Kahvesi</h3></div>
+            <div class="price">00₺</div>
+        </div>
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Dibek" alt="Dibek Kahvesi" class="food-img">
+            <div class="item-details"><h3>Dibek Kahvesi</h3></div>
+            <div class="price">00₺</div>
         </div>
 
     </div>
