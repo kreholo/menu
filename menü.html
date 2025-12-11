@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaviaySakura Menü</title>
+    <style>
+        /* GENEL AYARLAR */
+        :root {
+            --bg-color: #0b1026;
+            --card-bg: #162044;
+            --sakura-pink: #ffb7c5;
+            --moon-glow: #e2e8f0;
+            --text-color: #cbd5e1;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at top right, #2d3e75 0%, transparent 40%),
+                              radial-gradient(circle at bottom left, #4a1d35 0%, transparent 40%);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.4;
+        }
+
+        /* KAPAK / HEADER */
+        header {
+            text-align: center;
+            padding: 50px 20px 30px;
+        }
+
+        .moon {
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle, #fff 20%, #cbd5e1 100%);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.4);
+        }
+
+        h1 {
+            font-family: 'Garamond', serif;
+            color: var(--sakura-pink);
+            font-size: 2.2rem;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 183, 197, 0.3);
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--moon-glow);
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* NAVİGASYON - GÜNCELLENDİ: ORTALANDI */
+        nav {
+            display: flex;
+            justify-content: center; /* BUTONLARI ORTALA */
+            flex-wrap: wrap; /* Sığmazsa alt satıra geçsin */
+            padding: 15px 10px;
+            background: rgba(11, 16, 38, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 183, 197, 0.1);
+        }
+
+        nav a {
+            color: var(--sakura-pink);
+            text-decoration: none;
+            padding: 8px 16px;
+            margin: 0 5px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 183, 197, 0.1);
+            border-color: var(--sakura-pink);
+        }
+
+        /* MENÜ İÇERİĞİ */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px 20px 40px;
+        }
+
+        .category-title {
+            color: var(--moon-glow);
+            text-align: center; /* Başlıkları da ortaladım */
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-family: 'Garamond', serif;
+            position: relative;
+        }
+        
+        .category-title::after {
+            content: '🌸';
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+
+        /* KART TASARIMI - GÜNCELLENDİ: GÖRSEL EKLENDİ */
+        .menu-item {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 12px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center; /* Dikeyde ortala */
+            border: 1px solid rgba(255, 183, 197, 0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        /* YEMEK GÖRSELİ STİLİ */
+        .food-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: cover; /* Resmi kutuya sığdırır, bozmaz */
+            margin-right: 15px;
+            background-color: #2d3e75; /* Resim yüklenmezse görünecek renk */
+            border: 1px solid rgba(255, 183, 197, 0.2);
+        }
+
+        .item-details {
+            flex: 1; /* Kalan boşluğu doldur */
+        }
+
+        .item-details h3 {
+            margin: 0;
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .item-details p {
+            margin: 4px 0 0;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            line-height: 1.3;
+        }
+
+        .price {
+            color: var(--sakura-pink);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-left: 10px;
+            white-space: nowrap;
+        }
+
+        /* SAKURA EFEKTİ */
+        .petal {
+            position: fixed;
+            background: var(--sakura-pink);
+            width: 10px;
+            height: 10px;
+            border-radius: 10px 0;
+            opacity: 0.5;
+            z-index: -1;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.8; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="petal" style="left: 10%; animation-duration: 8s;"></div>
+    <div class="petal" style="left: 30%; animation-duration: 12s; animation-delay: 2s;"></div>
+    <div class="petal" style="left: 80%; animation-duration: 9s; animation-delay: 1s;"></div>
+
+    <header>
+        <div class="moon"></div>
+        <h1>MaviaySakura</h1>
+        <div class="tagline">Gecenin Ruhu, Kiraz Çiçeğinin Zarafeti</div>
+    </header>
+
+    <nav>
+        <a href="#baslangic">Başlangıç</a>
+        <a href="#sushi">Sushi</a>
+        <a href="#ana-yemek">Ana Yemek</a>
+        <a href="#icecek">İçecek</a>
+    </nav>
+
+    <div class="container">
+        
+        <h2 id="baslangic" class="category-title">Başlangıçlar</h2>
+        
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Edamame" alt="Edamame" class="food-img">
+            <div class="item-details">
+                <h3>Edamame</h3>
+                <p>Buharda pişmiş soya fasulyesi, maldon tuz.</p>
+            </div>
+            <div class="price">120₺</div>
+        </div>
+
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Gyoza" alt="Gyoza" class="food-img">
+            <div class="item-details">
+                <h3>Sakura Gyoza</h3>
+                <p>Tavuklu Japon mantısı, pembe sos ile.</p>
+            </div>
+            <div class="price">180₺</div>
+        </div>
+
+        <h2 id="sushi" class="category-title">Sushi & Roll</h2>
+
+        <div class="menu-item" style="border: 1px solid var(--sakura-pink);">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Maviay" alt="Maviay Roll" class="food-img">
+            <div class="item-details">
+                <h3 style="color:var(--sakura-pink)">Maviay Special 🌑</h3>
+                <p>Yılan balığı, mavi havyar, trüf mayonez.</p>
+            </div>
+            <div class="price">380₺</div>
+        </div>
+
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Sakura" alt="Sakura Roll" class="food-img">
+            <div class="item-details">
+                <h3>Sakura Roll 🌸</h3>
+                <p>Somon, krem peynir, pembe soya kağıdı.</p>
+            </div>
+            <div class="price">320₺</div>
+        </div>
+
+        <h2 id="ana-yemek" class="category-title">Ana Yemekler</h2>
+
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Tavuk" alt="General Tso" class="food-img">
+            <div class="item-details">
+                <h3>General Tso Tavuk</h3>
+                <p>Tatlı acı soslu çıtır tavuk, pilav ile.</p>
+            </div>
+            <div class="price">360₺</div>
+        </div>
+
+        <h2 id="icecek" class="category-title">İçecekler</h2>
+
+        <div class="menu-item">
+            <img src="https://placehold.co/100x100/1e293b/ffb7c5?text=Limonata" alt="Limonata" class="food-img">
+            <div class="item-details">
+                <h3>Mavi Limonata</h3>
+                <p>Renk değiştiren butterfly pea çayı.</p>
+            </div>
+            <div class="price">90₺</div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>MaviaySakura © 2024</p>
+    </footer>
+
+</body>
+</html>
